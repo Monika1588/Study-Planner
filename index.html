@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Study Planner </title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="app">
+
+    <header class="topbar">
+      <h1>📚 Study Planner</h1>
+      <div class="top-controls">
+        <button id="focusToggle" title="Focus Mode">🔕 Focus</button>
+        <button id="themeToggle" title="Dark / Light Mode">🌙</button>
+      </div>
+    </header>
+
+    <main class="container">
+
+      <!-- Left Column: Tasks + Notes -->
+      <section class="left">
+
+        <!-- Add Task Area -->
+        <div class="block">
+          <h2>Add Task</h2>
+
+          <div class="form-row">
+            <input id="taskName" placeholder="Task name (e.g. Revise Arrays)">
+            <input id="taskSubject" placeholder="Subject (e.g. DS)">
+          </div>
+
+          <div class="form-row">
+            <input id="taskDate" type="date">
+            <input id="taskEst" type="number" min="1" placeholder="Est. minutes">
+
+            <select id="taskPriority">
+              <option value="Normal">Normal</option>
+              <option value="High">High</option>
+              <option value="Low">Low</option>
+            </select>
+
+            <button id="addTask">Add</button>
+          </div>
+        </div>
+
+
+        <!-- List of Tasks -->
+        <div class="block">
+          <h2>Tasks</h2>
+
+          <div class="filters">
+            <select id="filterSubject">
+              <option value="all">All subjects</option>
+            </select>
+
+            <select id="filterStatus">
+              <option value="all">All</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
+            </select>
+
+            <select id="sortBy">
+              <option value="date">Sort: Date</option>
+              <option value="priority">Sort: Priority</option>
+              <option value="timeSpent">Sort: Time Spent</option>
+            </select>
+          </div>
+
+          <ul id="taskList" class="task-list"></ul>
+        </div>
+
+
+        <!-- Notes Section -->
+        <div class="block small">
+          <h3>Quick Notes</h3>
+
+          <textarea id="notes" placeholder="Write quick study notes..."></textarea>
+
+          <div class="row small-gap">
+            <button id="clearNotes">Clear</button>
+            <span id="quote" class="quote">
+              “Stay consistent — small steps every day.”
+            </span>
+          </div>
+        </div>
+
+      </section>
+
+
+
+      <!-- Right Column: Timer + Goal + Chart -->
+      <aside class="right">
+
+        <!-- Study Goal Block -->
+        <div class="block">
+          <h2>Daily Goal</h2>
+
+          <div class="goal-row">
+            <input id="dailyGoalInput" type="number" min="0.5" step="0.5" placeholder="Goal hrs (e.g. 3)">
+            <button id="setGoal">Set Goal</button>
+          </div>
+
+          <progress id="goalProgress" max="100" value="0"></progress>
+          <div class="goal-text" id="goalText">0 / 0 hrs today</div>
+        </div>
+
+
+        <!-- Real Study Timer -->
+        <div class="block">
+          <h2>Real Study Timer</h2>
+
+          <div class="form-row">
+            <select id="timerTaskSelect">
+              <option value="__none">(No task - general)</option>
+            </select>
+
+            <input id="timerMinutes" type="number" min="1" placeholder="Min">
+          </div>
+
+          <div class="timer-display" id="timerDisplay">00:00:00</div>
+
+          <br>
+
+          <div class="row small-gap">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="stopBtn">Stop & Log</button>
+          </div>
+
+          <br>
+
+          <div class="small muted">
+            Start records your real study time. Stop saves the exact minutes to your selected task and date
+            
+          </div>
+        </div>
+
+
+        <!-- Weekly Chart -->
+        <div class="block">
+          <h2>Weekly Progress</h2>
+          <canvas id="weeklyChart" height="220"></canvas>
+
+          <div class="row small-gap">
+            <button id="resetWeek">Reset Week</button>
+            <button id="exportCSV">Export CSV</button>
+          </div>
+        </div>
+
+
+        <!-- Small Stats Summary -->
+        <div class="block small">
+          <h3>Stats</h3>
+          <div>Completed tasks this week: <span id="completedCount">0</span></div>
+          <div>Average daily (hrs): <span id="avgDaily">0</span></div>
+          <div>Current streak (days): <span id="streak">0</span></div>
+        </div>
+
+      </aside>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <small>All data is saved locally in your browser. Built with HTML, CSS & JavaScript.</small>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
