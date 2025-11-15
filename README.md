@@ -3,7 +3,7 @@
 This project implements a interactive study management system that helps users organize tasks, track study time, and visualize weekly progress. The entire application is built using HTML, CSS, and JavaScript, and stored locally using LocalStorage, ensuring data is saved even after the browser is closed.<br>
 
 
-Project Overview<br>
+<h3>Project Overview</h3>
 The objective of this project is to create a user-friendly study planning tool that allows students to manage their tasks and track productivity effectively. The system provides features like task management, real-time study timer, filtering, and weekly data visualization using Chart.js.<br>
 
 
@@ -17,21 +17,21 @@ The app works step-by-step like this:<br>
 •	A weekly chart shows hours studied each day,  which resets automatically every week.<br>
 •	Users can set a daily goal and track progress with a visual progress bar.<br>
 •	Analytics display completed tasks, average daily hours, and streaks.<br>
-•	Notes, motivational quotes, theme toggle, and focus mode provide personalization and motivation.<br>
+•	Notes, motivational quotes, theme toggle, and focus mode provide personalization and motivation.<br><br>
 
 
 
 
 
-Technologies Used: <br>
+<h3>Technologies Used:</h3> 
 •	HTML5 – for the structure of the app <br>
 •	CSS3 – for styling and responsive design <br>
 •	JavaScript (ES6) – for app logic, task management, timer, and filtering <br>
 •	LocalStorage – for saving tasks, study time, and user progress <br>
-•	Chart.js – to visualize weekly study time in a chart <br>
+•	Chart.js – to visualize weekly study time in a chart <br><br>
 
 
-Code Explanation <br>
+<h3>Code Explanation</h3> 
 1. Task Creation & Management <br>
 •	HTML Elements: `taskName`, `taskSubject`, `taskDate`, `taskEst`, `taskPriority`, `addTaskBtn` <br>
 •	Logic: <br>
@@ -104,7 +104,7 @@ focusToggle.onclick toggles focus-mode class, hiding distractions.
 
 
 
-Future Enhancements:<br>
+<h3>Future Enhancements:</h3>
 •	Integrate cloud storage (Firebase) for cross-device access.<br>
 •	Add notifications and reminders for tasks.<br>
 •	Include Pomodoro mode for focused study sessions.<br>
